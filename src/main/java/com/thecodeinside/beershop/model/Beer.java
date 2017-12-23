@@ -5,10 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import org.hibernate.annotations.CollectionId;
+import lombok.Data;
 
+@Data
 @Entity
 public class Beer {
     @Id
@@ -25,4 +25,6 @@ public class Beer {
 
     @Column
     private String name;
+
+    
 }
