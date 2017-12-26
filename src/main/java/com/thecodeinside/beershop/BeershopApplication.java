@@ -8,6 +8,7 @@ import com.thecodeinside.beershop.model.BrewingCompany;
 import com.thecodeinside.beershop.repository.BeerRepository;
 import com.thecodeinside.beershop.repository.BeerStyleRepository;
 import com.thecodeinside.beershop.repository.BrewingCompanyRepository;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -52,9 +53,13 @@ public class BeershopApplication {
             asList(pilsener, ipa, aipa, weissbier, dunkel, viennaLager, witbier)
                 .forEach(beerStyleRepository::save);
 
-            Beer damaIPA = new Beer().setBrewingCompany(dama).setStyle(aipa).setName("IPA");
+            Beer damaIPA = new Beer().setBrewingCompany(dama).setStyle(aipa).setName("IPA").setPrice(bigDecimal("20.5", 2));
 
             asList(damaIPA).forEach(beerRepository::save);
         };
+    }
+
+    private BigDecimal bigDecimal(String value, int scale) {
+        return new BigDecimal(value).setScale(scale);
     }
 }

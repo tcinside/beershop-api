@@ -1,5 +1,6 @@
 package com.thecodeinside.beershop.model;
 
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,5 +27,6 @@ public class Beer {
     @Column
     private String name;
 
-    
+    @Column
+    private BigDecimal price;
 }
