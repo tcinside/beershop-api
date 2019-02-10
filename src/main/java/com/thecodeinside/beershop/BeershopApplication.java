@@ -9,7 +9,6 @@ import com.thecodeinside.beershop.repository.BeerRepository;
 import com.thecodeinside.beershop.repository.BeerStyleRepository;
 import com.thecodeinside.beershop.repository.BrewingCompanyRepository;
 import java.math.BigDecimal;
-import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -35,6 +34,7 @@ public class BeershopApplication {
     @Bean
     public CommandLineRunner commandLineRunner() {
         return args -> {
+
             BrewingCompany dama = new BrewingCompany().setName("Dama Bier");
             BrewingCompany bamberg = new BrewingCompany().setName("Bamberg");
             BrewingCompany kalango = new BrewingCompany().setName("Kalango");
